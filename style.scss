@@ -1,0 +1,50 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100vh;
+    border: 12px solid black;
+    background-color: black;
+}
+
+.container{
+    border: 2px solid black;
+    width: 20%;
+    margin: auto;
+    margin-top: 10%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    box-shadow: 10px 10px 5px lightblue;
+
+    input{
+        width: 1.85em;
+        height: 4em;
+        background-color: rgb(8, 33, 255);
+        border: 2px solid white;
+        color: white;
+        text-align: center;
+    }
+}
+
+.keyboard{
+    height: 15em;
+    width: 25em;
+    border: 2px solid white;
+    margin: auto;
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 1em;
+    // gap: .5em;
+
+    div{
+        border: 2px solid white;
+        height: 32%;
+        width: 10%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+}
