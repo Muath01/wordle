@@ -58,13 +58,12 @@ enter.addEventListener("click", ()=>{
                 
             }else{
                 boxes[z].style.background = "red"
-                // letter.style.background = "red"
+                letterDiv[i].style.background = "red"
                 z++
             }
         }
         input = [];
-        // ev = [];
-        
+        letterDiv = [];
 
     }else{
     }
