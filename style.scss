@@ -12,8 +12,6 @@ body{
     width: 20%;
     margin: auto;
     margin-top: 10%;
-    display: flex;
-    justify-content: center;
     flex-wrap: wrap;
     box-shadow: 10px 10px 5px lightblue;
 
@@ -47,4 +45,15 @@ body{
         align-items: center;
         cursor: pointer;
     }
+}
+
+.grid-container{
+    display: grid;
+    grid-template-columns: repeat(5, 30px);
+    grid-template-rows: repeat(5, auto);
+    justify-content: center;
+    color: white;
+    // grid-column-start: 2;
+    // grid-column-end: 3;
+    // row-gap: 112px;
 }
