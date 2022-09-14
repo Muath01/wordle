@@ -8,19 +8,8 @@ body {
   background-color: black;
 }
 
-.container {
-  border: 2px solid black;
-  width: 20%;
-  margin: auto;
-  margin-top: 10%;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-shadow: 10px 10px 5px lightblue;
-          box-shadow: 10px 10px 5px lightblue;
-}
-
 .container input {
-  width: 1.85em;
+  width: 3.5em;
   height: 4em;
   background-color: #0821ff;
   border: 2px solid white;
@@ -59,15 +48,25 @@ body {
 }
 
 .grid-container {
+  margin: auto;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (30px)[5];
-      grid-template-columns: repeat(5, 30px);
+  -ms-grid-columns: (auto)[5];
+      grid-template-columns: repeat(5, auto);
   -ms-grid-rows: (auto)[5];
       grid-template-rows: repeat(5, auto);
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  color: white;
+}
+
+.grid-container input {
+  width: 3.5em;
+  height: 4em;
+  background-color: #8e92ad;
+  border: 2px solid white;
+  text-align: center;
   color: white;
 }
 /*# sourceMappingURL=style.css.map */
