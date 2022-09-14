@@ -27,8 +27,17 @@ for (const letter of letters){
             y = i ;
             input.push(letter.innerText.toLowerCase())
             letterDiv.push(letter)
-            
-        }})}
+
+        }
+        // }else{
+        //     console.log("here")
+        //     y = i;
+        // }
+
+        console.log("x: ", i, "y: ", y)
+
+    
+    })}
 
 enter.addEventListener("click", ()=>{
 
@@ -54,7 +63,7 @@ enter.addEventListener("click", ()=>{
                 
             }else if(simx[i] === true){
                 boxes[z].style.background = "yellow"
-                boxes[i].style.background = "yellow"
+                letterDiv[i].style.background = "yellow"
                 z++
 
             }
@@ -78,5 +87,7 @@ deleteLetter.addEventListener("click", ()=>{
     letterDiv.pop()
     boxes[i-1].value = "";
     i--;
+    y = i;
+    console.log("x: ", i, "y: ", y)
 })
     
