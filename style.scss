@@ -26,15 +26,17 @@ body{
     border: 2px solid white;
     margin: auto;
     color: white;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    grid-template-rows: repeat(3, auto);
     flex-wrap: wrap;
     margin-top: 1em;
     // gap: .5em;
 
     div{
         border: 2px solid white;
-        height: 32%;
-        width: 10%;
+        height: 80%;
+        width: 80%;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -56,6 +58,6 @@ body{
         background-color: rgb(142, 146, 173);
         border: 2px solid rgb(255, 255, 255);
         text-align: center;
-        color: white;
+        color: black;
     }
 }

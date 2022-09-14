@@ -23,9 +23,12 @@ body {
   border: 2px solid white;
   margin: auto;
   color: white;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (auto)[5];
+      grid-template-columns: repeat(5, auto);
+  -ms-grid-rows: (auto)[3];
+      grid-template-rows: repeat(3, auto);
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   margin-top: 1em;
@@ -33,8 +36,8 @@ body {
 
 .keyboard div {
   border: 2px solid white;
-  height: 32%;
-  width: 10%;
+  height: 80%;
+  width: 80%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -67,6 +70,6 @@ body {
   background-color: #8e92ad;
   border: 2px solid white;
   text-align: center;
-  color: white;
+  color: black;
 }
 /*# sourceMappingURL=style.css.map */
