@@ -8,7 +8,7 @@ const deleteLetter = document.getElementById("delete");
 
 var i = 0 
 var y = 0
-
+let tick;
 const word = "crape"; // The word that you'll have to guess. 
 const arr = word.split(""); //Spliting the word in an array of letters
 var input = []; // The letters you input as guesses
@@ -18,6 +18,15 @@ let letterDiv = []; //This holds the parent element of the input, basically so w
 var z = 0;
 for (const letter of letters){
     letter.addEventListener("click", (e)=>{
+
+        if(y != 0 && y%5 == 0 ){ //Checking if we inputed 5 letters, if we did, we'll ask user to press enter. 
+            
+            setTimeout(() => {
+                 enter.classList.toggle("flash")
+            }, 500);
+            enter.classList.toggle("flash")
+        }
+
 
         if(y == 0 || y % 5 != 0){ //here we use y not i because we use to call for array positions, this gives us the freedom to have different values for y as long as they're not: % 5 == 0
             i++
@@ -29,14 +38,13 @@ for (const letter of letters){
 
         }
 
-        console.log("x: ", i, "y: ", y) //Checking to make sure i and y are equal in value. 
 
     
     })}
 
 enter.addEventListener("click", ()=>{
+    enter.classList.remove("flash") // incase the user kept clicking letters instead of enter.
 
-    
     if(y!=0 && y%5 == 0){ //Opposite of the above code. 
     
 
@@ -102,7 +110,7 @@ deleteLetter.addEventListener("click", ()=>{
         y = i;
         console.log("x: ", i, "y: ", y)
     }else{
-        y++; // This insures that if we input 5 letters but do not enter, we can still delete. 
+        // y++; // This insures that if we input 5 letters but do not enter, we can still delete. 
     }
 })
     

@@ -1,11 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
 body {
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   height: 100vh;
-  border: 12px solid black;
-  background-color: black;
+}
+
+.outer-div {
+  width: 33%;
+  border-radius: 10px;
+  margin: auto;
+  margin-top: 1em;
+  -webkit-box-shadow: 5px 5px 5px 1px lightblue;
+          box-shadow: 5px 5px 5px 1px lightblue;
+}
+
+#icon {
+  position: absolute;
+  left: 2%;
+  height: 100%;
+  width: 5%;
 }
 
 .container input {
@@ -20,22 +35,44 @@ body {
 .keyboard {
   height: 15em;
   width: 25em;
-  border: 2px solid white;
   margin: auto;
-  color: white;
+  color: black;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (auto)[5];
-      grid-template-columns: repeat(5, auto);
-  -ms-grid-rows: (auto)[3];
-      grid-template-rows: repeat(3, auto);
+  -ms-grid-columns: (auto)[1];
+      grid-template-columns: repeat(1, auto);
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   margin-top: 1em;
+  gap: .5em;
+  border-radius: 10px;
+  -webkit-box-shadow: 1px 1px 1px lightblue;
+          box-shadow: 1px 1px 1px lightblue;
+}
+
+.keyboard .item-one {
+  width: 99%;
+}
+
+.keyboard .item-two {
+  width: 90%;
+  margin: auto;
+}
+
+.keyboard .item-three {
+  width: 80%;
+  margin: auto;
+}
+
+.keyboard .item-four {
+  width: 50%;
+  margin: auto;
 }
 
 .keyboard div {
-  border: 2px solid white;
+  border: 1px solid black;
+  gap: 2px;
+  margin: 2px;
   height: 80%;
   width: 80%;
   display: -webkit-box;
@@ -48,6 +85,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
   cursor: pointer;
+  border-radius: 30px;
 }
 
 .grid-container {
@@ -62,14 +100,39 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
   color: white;
+  margin-top: 1.5em;
 }
 
 .grid-container input {
-  width: 3.5em;
-  height: 4em;
+  width: 4.5em;
+  height: 5em;
   background-color: #8e92ad;
   border: 2px solid white;
   text-align: center;
   color: black;
+}
+
+nav {
+  background-color: white;
+  height: 5.5em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: 'Pacifico', cursive;
+  border-bottom: 1px solid black;
+}
+
+nav div {
+  font-size: 28px;
+}
+
+.flash {
+  background-color: aqua;
 }
 /*# sourceMappingURL=style.css.map */
