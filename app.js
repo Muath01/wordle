@@ -10,6 +10,7 @@ class Wordle{
         this.y = 0;
         this.z = 0;
         this.tick;
+        this.test = getRandomUser();
         this.word = "crape"; // The word that you'll have to guess. 
         this.arr = this.word.split(""); //Spliting the word in an array of letters
         this.input = []; // The letters you input as guesses
@@ -17,6 +18,8 @@ class Wordle{
         this.finishIndex = 0;
 
     }
+
+
     
 
     start(){
@@ -96,7 +99,7 @@ class Wordle{
 
             setTimeout(() => {
                 if(this.finishIndex == 5){
-                    alert(`The secret word was ${this.word}`)
+                    alert(`The secret word was ${this.test}`)
                 } 
             }, 0);
     
@@ -153,7 +156,6 @@ async function getRandomUser(){
         // }else{
         //     // getRandomUser();
         // }
-        console.log(data[0].length)
 
 
     }catch(e){
@@ -162,12 +164,12 @@ async function getRandomUser(){
 }
 }
 
-// console.log(getRandomUser());
 
-(async function(){
-    let varible = await getRandomUser();
-    console.log(varible)
-})();
+const check = getRandomUser().then(res => console.log(res));
+
+// console.log("here", check)
+
+
 
 /*
 async function getRandomUser() {
