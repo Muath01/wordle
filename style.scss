@@ -8,7 +8,8 @@ body{
 
 .outer-div{
     // border: 2px solid black;
-    width: 33%;
+    width: 450px;
+    height: 630px;
     border-radius: 10px;
     margin: auto;
     margin-top: 1em;
@@ -57,16 +58,19 @@ body{
         width: 90%;
         margin: auto;
         // background-color: red;
+
     }
     .item-three{
         width: 80%;
         margin: auto;
-        // background-color: red;
     }
     .item-four{
         width: 50%;
         margin: auto;
-        // background-color: red;
+    }
+    
+    .letter:hover{
+        background-color: #8e92ad;
     }
 
     
@@ -83,8 +87,15 @@ body{
         cursor: pointer;
         border-radius: 30px;
     }
-    
+    #enter:hover{
+        background-color: lightgreen;
+    }
+    #delete:hover{
+        background-color: lightcoral;
+    }
 }
+    
+
 
 .grid-container{
     margin:auto;
@@ -97,7 +108,7 @@ body{
     input{
         width: 4.5em;
         height: 5em;
-        background-color: rgb(142, 146, 173);
+        background-color: #8e92ad;
         border: 2px solid rgb(255, 255, 255);
         text-align: center;
         color: black;

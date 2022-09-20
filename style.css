@@ -8,7 +8,8 @@ body {
 }
 
 .outer-div {
-  width: 33%;
+  width: 450px;
+  height: 630px;
   border-radius: 10px;
   margin: auto;
   margin-top: 1em;
@@ -69,6 +70,10 @@ body {
   margin: auto;
 }
 
+.keyboard .letter:hover {
+  background-color: #8e92ad;
+}
+
 .keyboard div {
   border: 1px solid black;
   gap: 2px;
@@ -86,6 +91,14 @@ body {
           align-items: center;
   cursor: pointer;
   border-radius: 30px;
+}
+
+.keyboard #enter:hover {
+  background-color: lightgreen;
+}
+
+.keyboard #delete:hover {
+  background-color: lightcoral;
 }
 
 .grid-container {
