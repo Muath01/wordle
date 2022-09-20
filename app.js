@@ -1,3 +1,5 @@
+
+
 class Wordle{
     constructor(){
         this.letters = document.getElementsByClassName("letter");
@@ -15,6 +17,7 @@ class Wordle{
         this.finishIndex = 0;
 
     }
+    
 
     start(){
         for (const letter of this.letters){
@@ -127,4 +130,66 @@ wordle.enter.addEventListener("click", ()=>{
     wordle.initEnter();
 }
 )
+
+
+
+
+async function getRandomUser(){
+    while(true){
+    try{
+        const res = await fetch("https://random-word-api.herokuapp.com/word");
+
+        const data = await res.json();
+
+        // while(data[0].length == 5){
+        //     console.log(data[0])
+        // }
+
+        if(data[0].length == 5){
+
+            console.log("done")
+            return data[0];
+        }
+        // }else{
+        //     // getRandomUser();
+        // }
+        console.log(data[0].length)
+
+
+    }catch(e){
+        console.log(e)
+    }
+}
+}
+
+// console.log(getRandomUser());
+
+(async function(){
+    let varible = await getRandomUser();
+    console.log(varible)
+})();
+
+/*
+async function getRandomUser() {
+try{
+    const res = await fetch('https://randomuser.me/api/');
     
+    const data = await res.json();
+
+    const user = data.results[0];
+    
+    
+    const newUser = {
+      name: `${user.name.first}`,
+      money: Math.floor(Math.random()*1000000),
+    };
+    
+    
+    addData(newUser);
+  }catch(err){
+    console.log(err);
+  }
+  localStorage.setItem("data",JSON.stringify(data))
+  
+}
+*/
