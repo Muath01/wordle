@@ -162,5 +162,6 @@ wordle.enter.addEventListener("click", ()=>{
 }
 )
 
+wordle.initDelete();
 
 
