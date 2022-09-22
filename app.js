@@ -146,6 +146,17 @@ class Wordle{
     }
 }
 
+
+
+window.addEventListener("load",function(){
+    function remove(){
+        const loader = document.querySelector(".loader")
+        console.log(loader)
+        loader.style.display = "none";
+    }
+    this.setTimeout(remove, 5000);
+})
+
 const wordle = new Wordle()
 
 wordle.initWord();
