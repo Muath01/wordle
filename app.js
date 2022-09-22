@@ -22,8 +22,6 @@ class Wordle{
     async initWord() {
         this.word = await this.getRandomUser();
         this.arr = this.word.split("");
-        console.log(this.word);
-        console.log(this.arr);
       }
 
     getRandomUser() {
@@ -33,7 +31,6 @@ class Wordle{
                 const res = await fetch("https://random-word-api.herokuapp.com/word");
                 const data = await res.json();
                 if (data[0].length === 5) {
-                    console.log("done")
                     return data[0];
                   }
                   return await fetchUser()
@@ -149,19 +146,19 @@ class Wordle{
     }
 }
 
-const test = new Wordle()
+const wordle = new Wordle()
 
-test.initWord();
+wordle.initWord();
+
 
 setTimeout(() => {
-    test.start();
+    wordle.start();
+}, 5000);
 
-}, 2000);
 
+wordle.enter.addEventListener("click", ()=>{
 
-test.enter.addEventListener("click", ()=>{
-
-    test.initEnter();
+    wordle.initEnter();
 }
 )
 
