@@ -4,6 +4,10 @@ body{
     padding: 0;
     box-sizing: border-box;
     height: 100vh;
+    background: #2B3134;
+    color: #777;
+    text-align: center;
+    font-family: "Gill sans", sans-serif;
 }
 
 .outer-div{
@@ -14,6 +18,7 @@ body{
     margin: auto;
     margin-top: 1em;
     box-shadow: 5px 5px 5px 1px lightblue;
+    background-color: white;
 }
 #icon{
     position: absolute;
@@ -22,8 +27,8 @@ body{
     width: 5%;
 }
 .container{
+    border-radius: 10px;
  
-
     input{
         width: 3.5em;
         height: 4em;
@@ -37,27 +42,23 @@ body{
 .keyboard{
     height: 15em;
     width: 25em;
-    // border: 2px solid black;
     margin: auto;
     color: black;
     display: grid;
     grid-template-columns: repeat(1, auto);
-    // justify-content: center;
-    // grid-template-rows: repeat(1, auto);
     flex-wrap: wrap;
     margin-top: 1em;
     gap: .5em;
     border-radius: 10px;
     box-shadow: 1px 1px 1px lightblue;
+    border: 1px solid black;
 
     .item-one{
         width: 99%;
-        // background-color: red;
     }
     .item-two{
         width: 90%;
         margin: auto;
-        // background-color: red;
 
     }
     .item-three{
@@ -133,3 +134,35 @@ nav{
 .flash{
     background-color: aqua;
 }
+
+// ne w
+
+
+
+  h1{
+    margin: 1em 0;
+    border-bottom: 1px dashed;
+    padding-bottom: 1em;
+    font-weight: lighter;
+  }
+  p{
+    font-style: italic;
+  }
+  .loader{
+    margin: 0 0 2em;
+    height: 100px;
+    width: 20%;
+    text-align: center;
+    padding: 1em;
+    margin: 0 auto 1em;
+    display: inline-block;
+    vertical-align: top;
+  }
+  
+  /*
+    Set the color of the icon
+  */
+  svg path,
+  svg rect{
+    fill: #FF6700;
+  }
