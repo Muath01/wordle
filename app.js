@@ -10,17 +10,41 @@ class Wordle{
         this.y = 0;
         this.z = 0;
         this.tick;
-        this.test = getRandomUser();
-        this.word = "crape"; // The word that you'll have to guess. 
-        this.arr = this.word.split(""); //Spliting the word in an array of letters
+        this.word = null;
+        // this.word = "crape"; // The word that you'll have to guess. 
+        // this.arr = this.word.split(""); //Spliting the word in an array of letters
         this.input = []; // The letters you input as guesses
         this.letterDiv = []; //This holds the parent element of the input, basically so we can change the background colour of the letter divs depending on user guess;
         this.finishIndex = 0;
 
     }
 
+    async initWord() {
+        this.word = await this.getRandomUser();
+        this.arr = this.word.split("");
+        console.log(this.word);
+        console.log(this.arr);
+      }
 
-    
+    getRandomUser() {
+        try{
+            return new Promise(async (resolve) => {
+              async function fetchUser() {
+                const res = await fetch("https://random-word-api.herokuapp.com/word");
+                const data = await res.json();
+                if (data[0].length === 5) {
+                    console.log("done")
+                    return data[0];
+                  }
+                  return await fetchUser()
+              }
+              return resolve(await fetchUser())
+          })
+
+        }catch(ee){
+            console.log(ee)
+        }
+    }
 
     start(){
         for (const letter of this.letters){
@@ -31,9 +55,9 @@ class Wordle{
                 if(this.y != 0 && this.y%5 == 0 ){ //Checking if we inputed 5 letters, if we did, we'll ask user to press enter. 
                     
                     setTimeout(() => {
-                         enter.classList.toggle("flash")
+                         this.enter.classList.toggle("flash")
                     }, 500);
-                    enter.classList.toggle("flash")
+                    this.enter.classList.toggle("flash")
                 }
         
         
@@ -52,8 +76,10 @@ class Wordle{
             })
     }
 }
+
+    // function three
     initEnter(){
-        enter.classList.remove("flash") // incase the user kept clicking letters instead of enter.
+        this.enter.classList.remove("flash") // incase the user kept clicking letters instead of enter.
 
         if(this.y!=0 && this.y%5 == 0){ //Opposite of the above code. 
         this.finishIndex++;    
@@ -99,7 +125,7 @@ class Wordle{
 
             setTimeout(() => {
                 if(this.finishIndex == 5){
-                    alert(`The secret word was ${this.test}`)
+                    alert(`The secret word was ${this.word}`)
                 } 
             }, 0);
     
@@ -108,14 +134,14 @@ class Wordle{
         
     }
     initDelete(){
-        deleteLetter.addEventListener("click", ()=>{
+        this.deleteLetter.addEventListener("click", ()=>{
             if(this.y % 5 != 0){ // This insures the we don't delete words that are entered, 
-                input.pop(); // remove the last letter input. 
-                letterDiv.pop() // remove the last letter div.
-                boxes[i-1].value = "";
-                i--;
-                y = i;
-                console.log("x: ", i, "y: ", y)
+                this.input.pop(); // remove the last letter input. 
+                this.letterDiv.pop() // remove the last letter div.
+                this.boxes[this.i-1].value = "";
+                this.i--;
+                this.y = this.i;
+                console.log("x: ", this.i, "y: ", this.y)
             }else{
                 // y++; // This insures that if we input 5 letters but do not enter, we can still delete. 
             }
@@ -123,75 +149,21 @@ class Wordle{
     }
 }
 
+const test = new Wordle()
 
-const wordle = new Wordle();
+test.initWord();
 
-wordle.start();
+setTimeout(() => {
+    test.start();
 
-wordle.enter.addEventListener("click", ()=>{
+}, 2000);
 
-    wordle.initEnter();
+
+test.enter.addEventListener("click", ()=>{
+
+    test.initEnter();
 }
 )
 
 
 
-
-async function getRandomUser(){
-    while(true){
-    try{
-        const res = await fetch("https://random-word-api.herokuapp.com/word");
-
-        const data = await res.json();
-
-        // while(data[0].length == 5){
-        //     console.log(data[0])
-        // }
-
-        if(data[0].length == 5){
-
-            console.log("done")
-            return data[0];
-        }
-        // }else{
-        //     // getRandomUser();
-        // }
-
-
-    }catch(e){
-        console.log(e)
-    }
-}
-}
-
-
-const check = getRandomUser().then(res => console.log(res));
-
-// console.log("here", check)
-
-
-
-/*
-async function getRandomUser() {
-try{
-    const res = await fetch('https://randomuser.me/api/');
-    
-    const data = await res.json();
-
-    const user = data.results[0];
-    
-    
-    const newUser = {
-      name: `${user.name.first}`,
-      money: Math.floor(Math.random()*1000000),
-    };
-    
-    
-    addData(newUser);
-  }catch(err){
-    console.log(err);
-  }
-  localStorage.setItem("data",JSON.stringify(data))
-  
-}
-*/
