@@ -79,9 +79,10 @@ class Wordle{
     // function three
     initEnter(){
         this.enter.classList.remove("flash") // incase the user kept clicking letters instead of enter.
-
+        
         if(this.y!=0 && this.y%5 == 0){ //Opposite of the above code. 
-        this.finishIndex++;    
+            this.finishIndex++;    
+            console.log("enter", this.finishIndex)
 
 
 
@@ -135,7 +136,7 @@ class Wordle{
     initDelete(){
         // this.y = this.i;
         
-            if(this.y % 5 != 0 && this.input.length != 0){ // This insures the we don't delete words that are entered, 
+            if(this.input.length != 0){ // This insures the we don't delete words that are entered, 
                 console.log("input before pop", this.input)
                 this.input.pop(); // remove the last letter input. 
                 console.log("input after pop", this.input)
