@@ -10,9 +10,9 @@ class Wordle{
         this.y = 0;
         this.z = 0;
         this.tick;
-        this.word = null;
-        // this.word = "crape"; // The word that you'll have to guess. 
-        // this.arr = this.word.split(""); //Spliting the word in an array of letters
+        // this.word = null;
+        this.word = "crape"; // The word that you'll have to guess. 
+        this.arr = this.word.split(""); //Spliting the word in an array of letters
         this.input = []; // The letters you input as guesses
         this.letterDiv = []; //This holds the parent element of the input, basically so we can change the background colour of the letter divs depending on user guess;
         this.finishIndex = 0;
@@ -20,8 +20,9 @@ class Wordle{
     }
 
     async initWord() {
-        this.word = await this.getRandomUser();
-        this.arr = this.word.split("");
+        // this.word = await this.getRandomUser();
+        // this.arr = this.word.split("");
+        // console.log(this.arr)
       }
 
     getRandomUser() {
@@ -47,6 +48,7 @@ class Wordle{
         for (const letter of this.letters){
             
             letter.addEventListener("click", (e)=>{
+                
                 
         
                 if(this.y != 0 && this.y%5 == 0 ){ //Checking if we inputed 5 letters, if we did, we'll ask user to press enter. 
@@ -80,7 +82,6 @@ class Wordle{
 
         if(this.y!=0 && this.y%5 == 0){ //Opposite of the above code. 
         this.finishIndex++;    
-        console.log("enter", this.finishIndex)
 
 
 
@@ -106,7 +107,7 @@ class Wordle{
                 }else if(simx[i] === true){ // this is the map function above, if true, that means the input exist in our array but in the wrong place. 
                     this.boxes[this.z].style.background = "yellow"
                     this.letterDiv[i].style.background = "yellow"
-                    this.z++
+                    this.z++;
     
                 }
                 
@@ -120,38 +121,45 @@ class Wordle{
             this.input = []; //Clears the inputs to take in the next 5 letter
             this.letterDiv = []; // Clears letter divs to take in the next 5 letters.
 
+
             setTimeout(() => {
                 if(this.finishIndex == 5){
                     alert(`The secret word was ${this.word}`)
                 } 
-            }, 0);
+            }, 1000);
     
         }else{
         }
         
     }
     initDelete(){
-        this.deleteLetter.addEventListener("click", ()=>{
-            if(this.y % 5 != 0){ // This insures the we don't delete words that are entered, 
+        // this.y = this.i;
+        
+            if(this.y % 5 != 0 && this.input.length != 0){ // This insures the we don't delete words that are entered, 
+                console.log("input before pop", this.input)
                 this.input.pop(); // remove the last letter input. 
+                console.log("input after pop", this.input)
+
+                console.log("ltter Div before the pop", this.letterDiv)
                 this.letterDiv.pop() // remove the last letter div.
+                console.log("ltter Div after the pop", this.letterDiv)
                 this.boxes[this.i-1].value = "";
                 this.i--;
                 this.y = this.i;
                 console.log("x: ", this.i, "y: ", this.y)
             }else{
-                // y++; // This insures that if we input 5 letters but do not enter, we can still delete. 
+                console.log("else")
+                this.y++; // This insures that if we input 5 letters but do not enter, we can still delete. 
             }
-        })
+        }
     }
-}
+
 
 
 
 window.addEventListener("load",function(){
     function remove(){
         const loader = document.querySelector(".loader")
-        console.log(loader)
         loader.style.display = "none";
     }
     this.setTimeout(remove, 1);
@@ -164,7 +172,7 @@ wordle.initWord();
 
 setTimeout(() => {
     wordle.start();
-}, 5000);
+}, 1);
 
 
 wordle.enter.addEventListener("click", ()=>{
@@ -173,6 +181,8 @@ wordle.enter.addEventListener("click", ()=>{
 }
 )
 
-wordle.initDelete();
+wordle.deleteLetter.addEventListener("click", ()=>{
+    wordle.initDelete();
+})
 
 
