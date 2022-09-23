@@ -81,8 +81,13 @@ body {
 }
 
 .keyboard .letter:hover {
-  background-color: #8e92ad;
+  background-color: lightblue;
   border-radius: 5px;
+}
+
+.keyboard .letter {
+  -webkit-box-shadow: 2px 2px 2px lightblue;
+          box-shadow: 2px 2px 2px lightblue;
 }
 
 .keyboard div {
@@ -100,6 +105,11 @@ body {
       -ms-flex-align: center;
           align-items: center;
   cursor: pointer;
+}
+
+.keyboard #enter, .keyboard #delete {
+  -webkit-box-shadow: 2px 2px 2px lightblue;
+          box-shadow: 2px 2px 2px lightblue;
 }
 
 .keyboard #enter:hover {
@@ -131,6 +141,8 @@ body {
   width: 4.5em;
   height: 5em;
   background-color: #8e92ad;
+  -webkit-box-shadow: 5px 5px 5px lightblue;
+          box-shadow: 5px 5px 5px lightblue;
   border: 2px solid white;
   text-align: center;
   color: black;

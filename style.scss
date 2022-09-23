@@ -55,6 +55,7 @@ body{
 
     .item-one{
         width: 99%;
+        
     }
     .item-two{
         width: 90%;
@@ -71,8 +72,12 @@ body{
     }
     
     .letter:hover{
-        background-color: #8e92ad;
+        background-color: lightblue;
         border-radius: 5px;
+
+    }
+    .letter{
+        box-shadow: 2px 2px 2px lightblue;
 
     }
 
@@ -88,6 +93,10 @@ body{
         align-items: center;
         cursor: pointer;
     }
+    #enter, #delete{
+        box-shadow: 2px 2px 2px lightblue;
+    }
+    
     #enter:hover{
         background-color: lightgreen;
         border-radius: 5px;
@@ -113,6 +122,7 @@ body{
         width: 4.5em;
         height: 5em;
         background-color: #8e92ad;
+        box-shadow: 5px 5px 5px lightblue;
         border: 2px solid rgb(255, 255, 255);
         text-align: center;
         color: black;

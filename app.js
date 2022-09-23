@@ -154,7 +154,7 @@ window.addEventListener("load",function(){
         console.log(loader)
         loader.style.display = "none";
     }
-    this.setTimeout(remove, 5000);
+    this.setTimeout(remove, 1);
 })
 
 const wordle = new Wordle()
