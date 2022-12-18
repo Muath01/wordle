@@ -12,14 +12,15 @@ body {
 }
 
 .outer-div {
-  width: 450px;
-  height: 630px;
+  width: 800px;
+  height: 930px;
   border-radius: 10px;
   margin: auto;
   margin-top: 1em;
   -webkit-box-shadow: 5px 5px 5px 1px lightblue;
           box-shadow: 5px 5px 5px 1px lightblue;
   background-color: white;
+  display: block;
 }
 
 #icon {
@@ -43,8 +44,8 @@ body {
 }
 
 .keyboard {
-  height: 15em;
-  width: 25em;
+  height: 20em;
+  width: 45em;
   margin: auto;
   color: black;
   display: -ms-grid;
@@ -58,6 +59,7 @@ body {
   border-radius: 10px;
   -webkit-box-shadow: 1px 1px 1px 1px lightblue;
           box-shadow: 1px 1px 1px 1px lightblue;
+  background-color: #e5f3f4;
   cursor: pointer;
 }
 
@@ -112,6 +114,12 @@ body {
           box-shadow: 2px 2px 2px lightblue;
 }
 
+.keyboard #replay {
+  -webkit-box-shadow: 2px 2px 2px lightblue;
+          box-shadow: 2px 2px 2px lightblue;
+  display: none;
+}
+
 .keyboard #enter:hover {
   background-color: lightgreen;
   border-radius: 5px;
@@ -119,6 +127,11 @@ body {
 
 .keyboard #delete:hover {
   background-color: lightcoral;
+  border-radius: 5px;
+}
+
+.keyboard #replay:hover {
+  background-color: lightseagreen;
   border-radius: 5px;
 }
 
@@ -138,8 +151,8 @@ body {
 }
 
 .grid-container input {
-  width: 4.5em;
-  height: 5em;
+  width: 9em;
+  height: 8em;
   background-color: #8e92ad;
   -webkit-box-shadow: 5px 5px 5px lightblue;
           box-shadow: 5px 5px 5px lightblue;
@@ -150,7 +163,7 @@ body {
 
 nav {
   background-color: white;
-  height: 5.5em;
+  height: 8.5em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -191,6 +204,10 @@ p {
   padding: 1em;
   margin: 0 auto 1em;
   display: inline-block;
+}
+
+.loader p {
+  font-size: 36px;
 }
 
 /*

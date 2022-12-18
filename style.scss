@@ -1,24 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
-body{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    height: 100vh;
-    background: #2B3134;
-    color: #777;
-    text-align: center;
-    font-family: "Gill sans", sans-serif;
+// colours 
+
+@mixin flexCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+
+// variables
+
+@import "./variables";
+
+// The body 
+@import "./body";
+
 
 .outer-div{
     // border: 2px solid black;
-    width: 450px;
-    height: 630px;
+    width: 800px;
+    height: 930px;
     border-radius: 10px;
     margin: auto;
     margin-top: 1em;
     box-shadow: 5px 5px 5px 1px lightblue;
     background-color: white;
+    display: block;
 }
 #icon{
     position: absolute;
@@ -40,8 +47,8 @@ body{
 }
 
 .keyboard{
-    height: 15em;
-    width: 25em;
+    height: 20em;
+    width: 45em;
     margin: auto;
     color: black;
     display: grid;
@@ -51,6 +58,7 @@ body{
     gap: .5em;
     border-radius: 10px;
     box-shadow: 1px 1px 1px 1px lightblue;
+    background-color: $buttons;
     cursor: pointer;
 
     .item-one{
@@ -88,23 +96,30 @@ body{
         margin: 2px;
         height: 80%;
         width: 80%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include flexCenter();
         cursor: pointer;
     }
     #enter, #delete{
         box-shadow: 2px 2px 2px lightblue;
+
+    }
+    #replay{
+        box-shadow: 2px 2px 2px lightblue;
+        display: none;
     }
     
     #enter:hover{
-        background-color: lightgreen;
+        background-color: $hoverEnter;
         border-radius: 5px;
     }
     #delete:hover{
-        background-color: lightcoral;
+        background-color: $hoverDelete;
         border-radius: 5px;
 
+    }
+    #replay:hover{
+        background-color: lightseagreen;
+        border-radius: 5px;
     }
 }
     
@@ -119,8 +134,8 @@ body{
     color: white;
     margin-top: 1.5em;
     input{
-        width: 4.5em;
-        height: 5em;
+        width: 9em;
+        height: 8em;
         background-color: #8e92ad;
         box-shadow: 5px 5px 5px lightblue;
         border: 2px solid rgb(255, 255, 255);
@@ -131,10 +146,9 @@ body{
 
 nav{
     background-color: white;
-    height: 5.5em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    height: 8.5em;
+    @include flexCenter();
+
     font-family: 'Pacifico', cursive;
     border-bottom: 1px solid black;
     div{
@@ -169,6 +183,10 @@ p{
     margin: 0 auto 1em;
     display: inline-block;
     // vertical-align: top;
+
+    p{
+        font-size: 36px;
+    }
   }
   
   /*

@@ -1,119 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="style.css">
     <script defer src="app.js"></script>
     <title>Document</title>
 </head>
+
 <body>
     <div class="loader loader--style1" title="0">
         <p id="game">Fetching your game</p>
         <p id="word">Picking a secret word</p>
         <p id="final">Final touches</p>
-        <svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-         width="40px" height="40px" viewBox="0 0 40 40" enable-background="new 0 0 40 40" xml:space="preserve">
-        <path opacity="0.2" fill="#000" d="M20.201,5.169c-8.254,0-14.946,6.692-14.946,14.946c0,8.255,6.692,14.946,14.946,14.946
+        <svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            x="0px" y="0px" width="40px" height="40px" viewBox="0 0 40 40" enable-background="new 0 0 40 40"
+            xml:space="preserve">
+            <path opacity="0.2" fill="#000"
+                d="M20.201,5.169c-8.254,0-14.946,6.692-14.946,14.946c0,8.255,6.692,14.946,14.946,14.946
           s14.946-6.691,14.946-14.946C35.146,11.861,28.455,5.169,20.201,5.169z M20.201,31.749c-6.425,0-11.634-5.208-11.634-11.634
-          c0-6.425,5.209-11.634,11.634-11.634c6.425,0,11.633,5.209,11.633,11.634C31.834,26.541,26.626,31.749,20.201,31.749z"/>
-        <path fill="#000" d="M26.013,10.047l1.654-2.866c-2.198-1.272-4.743-2.012-7.466-2.012h0v3.312h0
+          c0-6.425,5.209-11.634,11.634-11.634c6.425,0,11.633,5.209,11.633,11.634C31.834,26.541,26.626,31.749,20.201,31.749z" />
+            <path fill="#000" d="M26.013,10.047l1.654-2.866c-2.198-1.272-4.743-2.012-7.466-2.012h0v3.312h0
           C22.32,8.481,24.301,9.057,26.013,10.047z">
-          <animateTransform attributeType="xml"
-            attributeName="transform"
-            type="rotate"
-            from="0 20 20"
-            to="360 20 20"
-            dur="0.5s"
-            repeatCount="indefinite"/>
-          </path>
+                <animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 20 20"
+                    to="360 20 20" dur="0.5s" repeatCount="indefinite" />
+            </path>
         </svg>
-      </div>
+    </div>
 
     <nav>
         <ion-icon id="icon" name="apps-outline"></ion-icon>
         <div>Wordle Clone</div>
     </nav>
-    <div class="outer-div"><!--Added for borders-->
+    <div class="outer-div">
+        <!--Added for borders-->
 
-    <div class="container grid-container">
-        <input class="box" disabled type="text" id="box1">
-        <input class="box" disabled type="text" id="box2">
-        <input class="box" disabled type="text" id="box3">
-        <input class="box" disabled type="text" id="box4">
-        <input class="box" disabled type="text" id="box5">
+        <div class="container grid-container">
+            <input class="box" disabled type="text" id="box1">
+            <input class="box" disabled type="text" id="box2">
+            <input class="box" disabled type="text" id="box3">
+            <input class="box" disabled type="text" id="box4">
+            <input class="box" disabled type="text" id="box5">
 
-        <input class="box" disabled type="text" id="box6">
-        <input class="box" disabled type="text" id="box7">
-        <input class="box" disabled type="text" id="box8">
-        <input class="box" disabled type="text" id="box9">
-        <input class="box" disabled type="text" id="box10">
+            <input class="box" disabled type="text" id="box6">
+            <input class="box" disabled type="text" id="box7">
+            <input class="box" disabled type="text" id="box8">
+            <input class="box" disabled type="text" id="box9">
+            <input class="box" disabled type="text" id="box10">
 
-        <input class="box" disabled type="text" id="box11">
-        <input class="box" disabled type="text" id="box12">
-        <input class="box" disabled type="text" id="box13">
-        <input class="box" disabled type="text" id="box14">
-        <input class="box" disabled type="text" id="box15">
-        
-        <input class="box" disabled type="text" id="box16">
-        <input class="box" disabled type="text" id="box17">
-        <input class="box" disabled type="text" id="box18">
-        <input class="box" disabled type="text" id="box19">
-        <input class="box" disabled type="text" id="box20">
-        
-        <input class="box" disabled type="text" id="box21">
-        <input class="box" disabled type="text" id="box23">
-        <input class="box" disabled type="text" id="box24">
-        <input class="box" disabled type="text" id="box25">
-        <input class="box" disabled type="text" id="box26">
-    </div>
+            <input class="box" disabled type="text" id="box11">
+            <input class="box" disabled type="text" id="box12">
+            <input class="box" disabled type="text" id="box13">
+            <input class="box" disabled type="text" id="box14">
+            <input class="box" disabled type="text" id="box15">
 
-    <div class="keyboard grid-container-keyboard">
-        <div class="item-one">
-        <div class="letter">Q</div>
-        <div class="letter">W</div>
-        <div class="letter">E</div>
-        <div class="letter">R</div>
-        <div class="letter">T</div>
-        <div class="letter">Y</div>
-        <div class="letter">U</div>
-        <div class="letter">I</div>
-        <div class="letter">O</div>
-        <div class="letter">P</div>
-        </div>
-        <div class="item-two">
+            <input class="box" disabled type="text" id="box16">
+            <input class="box" disabled type="text" id="box17">
+            <input class="box" disabled type="text" id="box18">
+            <input class="box" disabled type="text" id="box19">
+            <input class="box" disabled type="text" id="box20">
 
-            <div class="letter">A</div>
-            <div class="letter">S</div>
-            <div class="letter">D</div>
-            <div class="letter">F</div>
-            <div class="letter">G</div>
-            <div class="letter">H</div>
-            <div class="letter">J</div>
-            <div class="letter">K</div>
-            <div class="letter">L</div>
-        </div>
-        <div class="item-three">
-            <div class="letter">Z</div>
-            <div class="letter">X</div>
-            <div class="letter">C</div>
-            <div class="letter">V</div>
-            <div class="letter">B</div>
-            <div class="letter">N</div>
-            <div class="letter">M</div>
-        </div>
-        <div class="item-four">
-
-            <div id="enter">Enter</div>
-            <div id="delete">delete</div>
+            <input class="box" disabled type="text" id="box21">
+            <input class="box" disabled type="text" id="box23">
+            <input class="box" disabled type="text" id="box24">
+            <input class="box" disabled type="text" id="box25">
+            <input class="box" disabled type="text" id="box26">
         </div>
 
-    </div>
+        <div class="keyboard grid-container-keyboard">
+            <div class="item-one">
+                <div class="letter">Q</div>
+                <div class="letter">W</div>
+                <div class="letter">E</div>
+                <div class="letter">R</div>
+                <div class="letter">T</div>
+                <div class="letter">Y</div>
+                <div class="letter">U</div>
+                <div class="letter">I</div>
+                <div class="letter">O</div>
+                <div class="letter">P</div>
+            </div>
+            <div class="item-two">
+
+                <div class="letter">A</div>
+                <div class="letter">S</div>
+                <div class="letter">D</div>
+                <div class="letter">F</div>
+                <div class="letter">G</div>
+                <div class="letter">H</div>
+                <div class="letter">J</div>
+                <div class="letter">K</div>
+                <div class="letter">L</div>
+            </div>
+            <div class="item-three">
+                <div class="letter">Z</div>
+                <div class="letter">X</div>
+                <div class="letter">C</div>
+                <div class="letter">V</div>
+                <div class="letter">B</div>
+                <div class="letter">N</div>
+                <div class="letter">M</div>
+            </div>
+            <div class="item-four">
+
+                <div id="enter">Enter</div>
+                <div id="delete">delete</div>
+                <div id="replay"><span class="material-symbols-outlined">
+                        replay
+                    </span></div>
+            </div>
+
+        </div>
     </div>
     <script src="https://requirejs.org/docs/release/2.3.5/minified/require.js"></script>
 
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
+
 </html>
